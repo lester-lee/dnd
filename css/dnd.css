@@ -1,7 +1,7 @@
 body {
   font-family: 'PT Sans';
   text-align: center;
-  background: url('/images/background/paper.png')
+  background: url('assets/paper.png')
 }
 
 .link-wrapper {
