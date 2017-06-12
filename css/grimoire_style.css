@@ -1,0 +1,154 @@
+body {
+  font-family: "Open Sans";
+}
+
+-webkit-scrollbar {
+  width: 5px;
+}
+-webkit-scrollbar-thumb {
+  height: 0;
+}
+-webkit-scrollbar-track {
+  background: #000;
+}
+
+nav, h1, h2, h3 {
+  font-family:"Cinzel";
+}
+
+@media (max-width: 350px) {
+  .navbar-brand {
+    display: none;
+  }
+  .navbar-search{
+    margin-left: 30px;
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar-header {
+    float: none;
+  }
+}
+
+.navbar{
+  margin-bottom: 0;
+  color: #333;
+}
+
+.navbar-brand {
+  font-weight: bold;
+}
+
+.navbar-search {
+  margin-top: 14px;
+  min-width: 100px;
+  width: calc(100% - 175px);
+  background: transparent;
+  border: 0;
+  outline: none;
+  border-bottom: 2px solid #999;
+  font-family: "Open Sans";
+}
+
+.navbar-search:active, .navbar-search:focus{
+  border-bottom-color: rgb(132, 175, 226);
+}
+
+.toggle-filters {
+  position: relative;
+  float: right;
+  padding: 9px 10px;
+  margin-top:3px;
+  margin-right: 15px;
+  margin-bottom: 8px;
+  background-color: transparent;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0px;
+  margin: 0;
+}
+
+.filters-show {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+}
+
+.filters-hide {
+  display: none;
+}
+
+.spell-filters {
+  color: #eee;
+  background: #999;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  min-height: 30px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+.spell-filter, .clear-filters {
+  margin: 0px 5px;
+  text-align: center;
+  border-radius: 5px;
+  transition: .3s all;
+  flex: 1;
+  flex-basis: auto;
+  padding: 2px 4px;
+}
+
+.spell-filter:hover, .clear-filters:hover {
+  cursor: pointer;
+}
+
+.active-filter {
+  background: #eee;
+  color: #999;
+}
+
+.spell {
+  background: #888;
+  border: 0;
+  border-radius: 20px;
+  width: 250px;
+  height: 350px;
+  margin: 0;
+  overflow: hidden;
+}
+
+.spell-info-box {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  align-content: center;
+  -webkit-flex-flow: row;
+  -ms-flex-flow: row;
+  flex-flow: row;
+}
+
+.spell-name, .spell-level {
+  text-align: center;
+}
+
+.spell-info {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  text-align: center;
+}
+
+.spell-desc {
+  height: 70%;
+  width: calc(100% - 16px);
+  overflow: auto;
+  margin: 0 auto;
+  margin-bottom: 5px;
+}

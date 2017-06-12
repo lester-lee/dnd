@@ -1,14 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Grimoire</title>
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Cinzel|Open+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/grimoire_style.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
+  <script src="https://use.fontawesome.com/298a6eae3c.js"></script>
 </head>
-<body>
 
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a href="#" class="navbar-brand">Grimoire</a>
+        <input class="navbar-search" type="text" placeholder="Search">
+        <div class="toggle-filters btn glyphicon glyphicon-chevron-down" data-toggled=0></div>
+      </div>
+    </div>
+  </nav>
+  <ul class="spell-filters filters-hide">
+    <li class="spell-filter" data-tags="cantrip">C</li>
+    <li class="spell-filter" data-tags="level1">1</li>
+    <li class="spell-filter" data-tags="level2">2</li>
+    <li class="spell-filter" data-tags="level3">3</li>
+    <li class="spell-filter" data-tags="level4">4</li>
+    <li class="spell-filter" data-tags="level5">5</li>
+    <li class="spell-filter" data-tags="level6">6</li>
+    <li class="spell-filter" data-tags="level7">7</li>
+    <li class="spell-filter" data-tags="level8">8</li>
+    <li class="spell-filter" data-tags="level9">9</li>
+    <li class="clear-filters glyphicon glyphicon-remove-sign"></li>
+  </ul>
+  <ul class="spell-filters filters-hide">
+    <li class="spell-filter" data-tags="bard">Bard</li>
+    <li class="spell-filter" data-tags="cleric">Cleric</li>
+    <li class="spell-filter" data-tags="druid">Druid</li>
+    <li class="spell-filter" data-tags="paladin">Paladin</li>
+    <li class="spell-filter" data-tags="ranger">Ranger</li>
+    <li class="spell-filter" data-tags="sorcerer">Sorcerer</li>
+    <li class="spell-filter" data-tags="warlock">Warlock</li>
+    <li class="spell-filter" data-tags="wizard">Wizard</li>
+    <li class="clear-filters glyphicon glyphicon-remove-sign"></li>
+  </ul>
+
+  <ul class="spell-container container-fluid">
+    <li class="spell" data-tags="bard,cantrip,abjuration">
+      <div class="spell-name">Blade Ward</div>
+      <div class="spell-level spl-cantrip">Abjuration Cantrip</div>
+      <ul class="spell-info-box">
+        <li class="spell-info"><span class="glyphicon glyphicon-cog"></span> 1 Round</li>
+        <li class="spell-info"><span class="glyphicon glyphicon-asterisk"></span> V S M</li>
+      </ul>
+      <ul class="spell-info-box">
+        <li class="spell-info"><span class="glyphicon glyphicon-hourglass"></span> 1 Minute</li>
+        <li class="spell-info"><span class="glyphicon glyphicon-screenshot"></span> 60ft Cone</li>
+      </ul>
+      <div class="spell-desc">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident tenetur repudiandae deleniti soluta, vitae expedita aut dolore nisi. Aut, eveniet quaerat magnam quas debitis fugit impedit nulla, expedita illum, accusantium vero blanditiis sequi labore
+        hic veniam facere cumque error quod voluptate quis reiciendis optio eum molestiae? In ipsa perferendis asperiores voluptate placeat provident veritatis alias molestiae iste vitae nam non, eius laboriosam est dignissimos, maxime ullam maiores ipsum
+        nisi! Soluta molestiae blanditiis vel nobis quae aspernatur qui consectetur, vitae culpa dolor beatae ea perspiciatis sunt similique commodi illum officiis, rem sit voluptatem laudantium id dolore sequi voluptatibus? Eius rem, voluptas modi sequi
+        magnam veniam sapiente amet commodi consequuntur corporis atque totam est iure in assumenda aut maiores maxime blanditiis hic. Vel aliquid, at et laboriosam quod nesciunt cupiditate quia, impedit. Ipsam repudiandae quia obcaecati eius, provident
+        saepe voluptate et? Qui ut maiores fugit. Eligendi maiores repellendus, reprehenderit similique eius et numquam labore non enim eaque, rerum, dolore distinctio quisquam. Natus quisquam atque sapiente, magni eaque debitis quod ullam quasi itaque,
+        accusamus tenetur quaerat. Dolorem sapiente neque, ipsam reiciendis aliquid nisi perspiciatis, odit enim. Est, nobis, sit! Pariatur similique eveniet quam nemo veniam soluta, harum. Iusto accusantium totam non, perferendis nisi.
+      </div>
+    </li>
+  </ul>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="js/grimoire.js" type="text/javascript" />
+
+  </script>
 </body>
+
 </html>
