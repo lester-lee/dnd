@@ -2,36 +2,49 @@ body {
   font-family: "Open Sans";
 }
 
--webkit-scrollbar {
-  width: 5px;
+::-webkit-scrollbar {
+    width: 2px;
 }
--webkit-scrollbar-thumb {
-  height: 0;
+
+::-webkit-scrollbar-track {
+    background: transparent;
 }
--webkit-scrollbar-track {
-  background: #000;
+
+::-webkit-scrollbar-thumb {
+  background: #333;
 }
 
 nav, h1, h2, h3 {
-  font-family:"Cinzel";
+  font-family: "Cinzel";
 }
 
 @media (max-width: 350px) {
   .navbar-brand {
     display: none;
   }
-  .navbar-search{
+  .navbar-search {
     margin-left: 30px;
+  }
+  .spell {
+    
+  }
+  .spell-level, .spell-info-box, .spell-desc {
+    /*display: none;*/
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 350px) {
   .navbar-header {
     float: none;
   }
+  .spell-info-box {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+  }
 }
 
-.navbar{
+.navbar {
   margin-bottom: 0;
   color: #333;
 }
@@ -51,7 +64,7 @@ nav, h1, h2, h3 {
   font-family: "Open Sans";
 }
 
-.navbar-search:active, .navbar-search:focus{
+.navbar-search:active, .navbar-search:focus {
   border-bottom-color: rgb(132, 175, 226);
 }
 
@@ -59,7 +72,7 @@ nav, h1, h2, h3 {
   position: relative;
   float: right;
   padding: 9px 10px;
-  margin-top:3px;
+  margin-top: 3px;
   margin-right: 15px;
   margin-bottom: 8px;
   background-color: transparent;
@@ -114,28 +127,38 @@ ul {
   color: #999;
 }
 
+.spell-container {
+  padding-top: 10px;
+  height: calc(99vh - 50px);
+  overflow-y: auto;
+}
+
 .spell {
   background: #888;
-  border: 0;
+  border: 5px solid #888;
   border-radius: 20px;
-  width: 250px;
-  height: 350px;
   margin: 0;
   overflow: hidden;
+  display: inline-block;
 }
 
 .spell-info-box {
-  display: -webkit-flex;
-  display: -ms-flex;
-  display: flex;
   align-content: center;
   -webkit-flex-flow: row;
   -ms-flex-flow: row;
   flex-flow: row;
 }
 
+.spell-name {
+  font-size: 2.5ex;
+  color: #fff;
+}
+
 .spell-name, .spell-level {
   text-align: center;
+  font-family: "Cinzel";
+  font-weight: bold;
+  border-bottom: 1px solid #888;
 }
 
 .spell-info {
@@ -145,10 +168,17 @@ ul {
   text-align: center;
 }
 
+.spell-icon {
+  float: left;
+}
+
 .spell-desc {
   height: 70%;
   width: calc(100% - 16px);
   overflow: auto;
   margin: 0 auto;
-  margin-bottom: 5px;
+  margin-bottom: 2px;
+  background: #fff;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
