@@ -39,8 +39,6 @@ function clearFilters() {
 
 $(document).ready(function() {
 
-  tinysort('ul#spell-container>li', {attr:'data-level'}, {attr:'data-tags'});
-
   $('.toggle-filters').on('click', function() {
     btn = $(this);
     if (btn.attr('data-toggled') == 0) {

@@ -1,4 +1,5 @@
 import os
+spell_list = []
 html = '''<!DOCTYPE html>
 <html lang="en">
 
@@ -53,7 +54,7 @@ for filepath in os.listdir("spell_data"):
     with open("spell_data/" + filepath, encoding="UTF-8") as f:
         data = [t.strip() for t in f.readlines()]
         # print(data)
-        spell_name = data[2].replace('"','').replace("title:",'').strip()
+        spell_name = data[2].replace('"', '').replace("title:", '').strip()
         spell_tags = data[5][7:-1]
         spell_level = data[8].strip("*")
         if "cantrip" in spell_level:
@@ -67,14 +68,14 @@ for filepath in os.listdir("spell_data"):
         temp_spell_comp = data[14][16:]
         if "(" in temp_spell_comp:
             idx = temp_spell_comp.find('(')
-            spell_comp = temp_spell_comp[:idx-1]
-            spell_desc = "Materials: " + temp_spell_comp[idx+1:-1] + "<br>"
+            spell_comp = temp_spell_comp[:idx - 1]
+            spell_desc = "Materials: " + temp_spell_comp[idx + 1:-1] + "<br>"
         else:
             spell_comp = temp_spell_comp
             spell_desc = ""
         spell_dur = data[16][14:]
         spell_desc += "<br>".join(data[18:])
-        spell_dict = {
+        spell = {
             "name": spell_name,
             "tags": spell_tags,
             "level": spell_level,
@@ -86,8 +87,8 @@ for filepath in os.listdir("spell_data"):
             "dur": spell_dur,
             "desc": spell_desc
         }
-        html += '''
-        <li class="spell {lvl}" data-level="{dlvl}" data-tags="{name}, {tags}">
+        spell_html = '''
+        <li class="spell {lvl}" data-tags="{name}, {tags}">
             <div class="spell-name">{name}</div>
             <div class="spell-level">{level}</div>
             <ul class="spell-info-box">
@@ -97,14 +98,20 @@ for filepath in os.listdir("spell_data"):
                 <li class="spell-info"><span class="spell-icon glyphicon glyphicon-screenshot"></span> {range}</li>
             </ul>
             <div class="spell-desc">{desc}</div>
-        </li>'''.format(**spell_dict)
-        # print(filepath)
-# print(spell_dict)
+        </li>'''.format(**spell)
+        spell["html"] = spell_html
+        spell_dict.append(spell)
+
+# sort list of spells by level, then by name
+spell_list = sorted(spell_list, key = lambda k: (k['dlvl'], k['name']))
+for sp in spell_list:
+    html += sp['html']
+
 html += '''</ul>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script src="js/grimoire.js" type="text/javascript"></script>
 </body>
-
 </html>'''
+
 with open("../grimoire.html", 'w', encoding='UTF-8') as f:
     f.write(html)
