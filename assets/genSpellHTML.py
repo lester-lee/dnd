@@ -12,7 +12,6 @@ html = '''<!DOCTYPE html>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" href="css/grimoire_style.css">
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/tinysort/2.3.6/tinysort.min.js"> </script>
 </head>
 
 <body>
@@ -100,7 +99,7 @@ for filepath in os.listdir("spell_data"):
             <div class="spell-desc">{desc}</div>
         </li>'''.format(**spell)
         spell["html"] = spell_html
-        spell_dict.append(spell)
+        spell_list.append(spell)
 
 # sort list of spells by level, then by name
 spell_list = sorted(spell_list, key = lambda k: (k['dlvl'], k['name']))
