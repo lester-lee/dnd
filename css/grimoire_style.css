@@ -184,48 +184,48 @@ ul {
 }
 
 .level1 {
-  background: #4c6d83;
-  border: 10px solid #4c6d83;
+  background: #a46d96;
+  border: 10px solid #a46d96;
 }
 
 .level2 {
-  background: #336E7B;
-  border: 10px solid #336E7B;
+  background: #9371a7;
+  border: 10px solid #9371a7;
 }
 
 .level3 {
-  background: #019875;
-  border: 10px solid #019875;
+  background: #7168a1;
+  border: 10px solid #7168a1;
 }
 
 .level4 {
-  background: #2ECC71;
-  border: 10px solid #2ECC71;
+  background: #6679a0;
+  border: 10px solid #6679a0;
 }
 
 .level5 {
-  background: #F39C12;
-  border: 10px solid #F39C12;
+  background: #6692a0;
+  border: 10px solid #6692a0;
 }
 
 .level6 {
-  background: #D35400;
-  border: 10px solid #D35400;
+  background: #6aa270;
+  border: 10px solid #6aa270;
 }
 
 .level7 {
-  background: #D64541;
-  border: 10px solid #D64541;
+  background: #8da168;
+  border: 10px solid #8da168;
 }
 
 .level8 {
-  background: #8E44AD;
-  border: 10px solid #8E44AD;
+  background: #a48e6d;
+  border: 10px solid #a48e6d;
 }
 
 .level9 {
-  background: #913D88;
-  border: 10px solid #913D88;
+  background: #a27269;
+  border: 10px solid #a27269;
 }
 
 @media (min-width: 600px) {
