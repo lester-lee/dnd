@@ -14,7 +14,7 @@ tags: [cleric, druid, wizard, level4, transmutation]
 
 **Components**: V, S, M (a drop of water and a pinch of dust)
 
-**Duration**: Concentration, up to 10 minutes
+**Duration**: Concentration, up to 10 min
 
 Until the spell ends, you control any freestanding water inside an area you choose that is a cube up to 100 feet on a side. You can choose from any of the following effects when you cast this spell. As an action on your turn, you can repeat the same effect or choose a different one.
 

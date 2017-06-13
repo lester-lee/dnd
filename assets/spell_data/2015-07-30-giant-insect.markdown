@@ -14,7 +14,7 @@ tags: [druid, level4, transmutation]
 
 **Components**: V, S
 
-**Duration**: Concentration, up to 10 minutes
+**Duration**: Concentration, up to 10 min
 
 You transform up to ten centipedes, three spiders, five wasps, or one scorpion within range into versions of their natural forms for the duration. A centipede becomes a giant centipede, a spider becomes a giant spider, a wasp becomes a giant wasp, a wasp becomes a giant wasp, and a scorpion becomes a giant scorpion. 
 

@@ -8,7 +8,7 @@ tags: [bard, cleric, warlock (undying), wizard, level5, divination]
 
 **5th-level divination**
 
-**Casting Time**: 10 minutes
+**Casting Time**: 10 min
 
 **Range**: Self
 

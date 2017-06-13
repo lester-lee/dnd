@@ -8,7 +8,7 @@ tags:   [bard, druid, wizard, level7, illusion]
 
 **7th-level illusion**
 
-**Casting Time**: 10 minutes
+**Casting Time**: 10 min
 
 **Range**: Sight
 

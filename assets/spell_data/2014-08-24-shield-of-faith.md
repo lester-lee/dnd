@@ -1,10 +1,9 @@
 ---
 layout: post
-title: "Shield of Faith"
+title:  "Shield of Faith"
 date: 2014-08-24
 source: PHB.275
 tags: [cleric, paladin, level1, abjuration]
-
 ---
 
 **1st-level abjuration**
@@ -15,6 +14,6 @@ tags: [cleric, paladin, level1, abjuration]
 
 **Components**: V, S, M (a small parchment with a bit of holy text written on it)
 
-**Duration**: Concentration, up to 10 minutes
+**Duration**: Concentration, up to 10 min
 
 A shimmering field appears and surrounds a creature of your choice within range, granting it a +2 bonus to AC for the duration.

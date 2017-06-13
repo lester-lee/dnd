@@ -14,7 +14,7 @@ tags: [druid, level2, evocation]
 
 **Components**: V, S, M (leaf of sumac)
 
-**Duration**: Concentration, up to 10 minutes
+**Duration**: Concentration, up to 10 min
 
 You evoke a fiery blade in your free hand. The blade is similar in size and shape to a scimitar, and it lasts for the duration. If you let go of the blade, it disappears, but you can evoke the blade again as a bonus action.
 

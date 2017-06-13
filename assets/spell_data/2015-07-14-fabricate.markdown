@@ -8,7 +8,7 @@ tags: [wizard, level4, transmutation]
 
 **4th-level transmutation**
 
-**Casting Time**: 10 minutes
+**Casting Time**: 10 min
 
 **Range**: 120 feet
 

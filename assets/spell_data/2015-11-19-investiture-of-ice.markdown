@@ -14,7 +14,7 @@ tags: [druid, sorcerer, warlock, wizard, level6, transmutation]
 
 **Components**: V, S
 
-**Duration**: Concentration, up to 10 minutes
+**Duration**: Concentration, up to 10 min
 
 Until the spell ends, ice rimes your body, and you gain the following benefits:
 

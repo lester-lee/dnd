@@ -8,7 +8,7 @@ tags: [cleric, level2, evocation]
 
 **2nd-level evocation**
 
-**Casting Time**: 10 minutes
+**Casting Time**: 10 min
 
 **Range**: 30 feet
 

@@ -1,12 +1,46 @@
-function toggleFilter(text){
-  console.log(text);
+var filters = [];
+
+function refreshList(text) {
+  var li, i, tags, show;
+  tfilters = text || filters;
+  var fi, flen = tfilters.length;
+  // console.log(tfilters);
+  li = $('#spell-container').children();
+  for (i = 0; i < li.length; i++) {
+    show = true;
+    tags = li[i].getAttribute("data-tags").toUpperCase();
+    for (fi = 0; fi < flen; fi++) {
+      // console.log(tfilters[fi], tags);
+      if (tags.indexOf(tfilters[fi]) < 0) {
+        show = false;
+        break;
+      }
+    }
+    li[i].style.display = show ? "" : "none";
+  }
 }
 
-function clearFilters(){
-  console.log("clear filter");
+function toggleFilter(text) {
+  var filter, list, li, i, tags, idx;
+  filter = text.toUpperCase();
+  idx = filters.indexOf(filter);
+  if (idx > -1) {
+    filters.splice(idx, 1);
+  } else {
+    filters.push(filter)
+  }
+  refreshList();
+}
+
+function clearFilters() {
+  filters = [];
+  refreshList();
 }
 
 $(document).ready(function() {
+
+  tinysort('ul#spell-container>li', {attr:'data-level'});
+
   $('.toggle-filters').on('click', function() {
     btn = $(this);
     if (btn.attr('data-toggled') == 0) {
@@ -35,10 +69,31 @@ $(document).ready(function() {
     clearFilters();
   });
 
-  $('.spell-name').on('click', function () {
+  $('.spell-name').on('click', function() {
     $(this).parent().toggleClass('show-spell');
   });
 
-  $('#spells').load("assets/grimoire_spells.html");
+  $('div').on('mousewheel DOMMouseScroll', function(e) {
 
+    var e0 = e.originalEvent;
+    var delta = e0.wheelDelta || -e0.detail;
+
+    this.scrollTop += (delta < 0 ? 1 : -1) * 30;
+    e.preventDefault();
+  });
+
+  $('.navbar-search').on('keyup', function() {
+    var filter = $(this)[0].value.toUpperCase().split("|");
+    refreshList(filter);
+
+    // list = $('#spell-container');
+    // li = list[0].children;
+    // for (i = 0; i < li.length; i++) {
+    //   if (li[i].getAttribute("data-tags").toUpperCase().indexOf(filter) > -1) {
+    //     li[i].style.display = "";
+    //   } else {
+    //     li[i].style.display = "none";
+    //   }
+    // }
+  });
 });

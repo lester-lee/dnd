@@ -8,7 +8,7 @@ tags: [wizard, level6, evocation]
 
 **6th-level evocation**
 
-**Casting Time**: 10 minutes
+**Casting Time**: 10 min
 
 **Range**: Self
 

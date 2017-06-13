@@ -8,7 +8,7 @@ tags: [paladin, level2, conjuration]
 
 **2nd-level conjuration**
 
-**Casting Time**: 10 minutes
+**Casting Time**: 10 min
 
 **Range**: 30 feet
 

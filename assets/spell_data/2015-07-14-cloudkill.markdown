@@ -14,7 +14,7 @@ tags: [cleric (death), druid (underdark), sorcerer, wizard, level5, conjuration]
 
 **Components**: V, S
 
-**Duration**: Concentration, up to 10 minutes
+**Duration**: Concentration, up to 10 min
 
 You create a 20-foot-radius sphere of poisonous, yellow-green fog centered on a point you choose within range. The fog spreads around corners. It lasts for the duration or until strong wind disperses the fog, ending the spell. Its area is heavily obscured.
 

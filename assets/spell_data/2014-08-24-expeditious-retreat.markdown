@@ -14,6 +14,6 @@ tags: [sorcerer, warlock, wizard, level1, transmutation]
 
 **Components**: V, S
 
-**Duration**: Concentration, up to 10 minutes
+**Duration**: Concentration, up to 10 min
 
 This spell allows you to move at an incredible pace. When you cast this spell, and then as a bonus action on each of your turns until the spell ends, you can take the Dash action.

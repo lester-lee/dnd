@@ -8,7 +8,7 @@ tags: [cleric, druid, level6, conjuration]
 
 **6th-level conjuration**
 
-**Casting Time**: 10 minutes
+**Casting Time**: 10 min
 
 **Range**: 30 feet
 

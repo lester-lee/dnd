@@ -14,7 +14,7 @@ tags: [cleric, paladin (crown), level3, conjuration]
 
 **Components**: V, S, M (a holy symbol)
 
-**Duration**: Concentration, up to 10 minutes
+**Duration**: Concentration, up to 10 min
 
 You call forth spirits to protect you. They flit around you to a distance of 15 feet for the duration. If you are good or neutral, their spectral form appears angelic or fey (your choice). If you are evil, they appear fiendish.
 

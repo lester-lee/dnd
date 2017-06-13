@@ -8,7 +8,7 @@ tags: [cleric, level6, ritual, abjuration]
 
 **6th-level abjuration (ritual)**
 
-**Casting Time**: 10 minutes
+**Casting Time**: 10 min
 
 **Range**: Touch
 

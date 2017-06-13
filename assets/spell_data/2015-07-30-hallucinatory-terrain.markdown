@@ -8,7 +8,7 @@ tags: [bard, druid, warlock, wizard, level4, illusion]
 
 **4th-level illusion**
 
-**Casting Time**: 10 minutes
+**Casting Time**: 10 min
 
 **Range**: 300 feet
 

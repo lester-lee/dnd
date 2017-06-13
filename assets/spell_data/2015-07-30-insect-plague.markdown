@@ -14,7 +14,7 @@ tags: [cleric, druid, sorcerer, level5, conjuration]
 
 **Components**: V, S, M (a few grains of sugar, some kernels of grain, and a smear of fat)
 
-**Duration**: Concentration, up to 10 minutes
+**Duration**: Concentration, up to 10 min
 
 Swarming, biting locusts fill a 20-foot-radius sphere centered on a point you choose within range, The sphere spreads around corners. The sphere remains for the duration, and its area is lightly obscured. The sphere's area is difficult terrain.
 

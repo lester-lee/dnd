@@ -8,7 +8,7 @@ tags: [bard, wizard, level6, abjuration]
 
 **6th-level abjuration**
 
-**Casting Time**: 10 minutes
+**Casting Time**: 10 min
 
 **Range**: Touch
 
@@ -26,13 +26,13 @@ When you cast this spell, you can specify individuals that are unaffected by any
 
 **Doors.** All doors in the warded area are magically locked, as if sealed by an *[arcane lock](arcane-lock/ "arcane lock (lvl 2)")* spell. In addition, you can cover up to ten doors with an illusion (equivalent to the illusory object function of the *[minor illusion](minor-illusion "minor illusion (cantrip)")* spell) to make them appear as plain sections of wall.
 
-**Stairs.** Webs fill all stairs in the warded area from top to bottom, as the *[web](web "web (lvl 2)")* spell. These strands regrow in 10 minutes if they are burned or torn away while guards and wars lasts.
+**Stairs.** Webs fill all stairs in the warded area from top to bottom, as the *[web](web "web (lvl 2)")* spell. These strands regrow in 10 min if they are burned or torn away while guards and wars lasts.
 
 **Other Spell Effect.** You can place your choice of one of the following magical effects within the warded area of the stronghold.
 
 * Place *[dancing lights](dancing-lights "dancing lights (cantrip)")* in four corridors. You can designate a simple program that the lights repeat as long as guards and wards lasts.
 * Place *[magic mouth](magic-mouth "magic mouth (lvl 2)")* in two locations.
-* Place *[stinking cloud](stinking-cloud "stinking cloud (lvl 3)")* in two locations. The vapors appear in the places you designate; They return within 10 minutes if dispersed by wind while *guards and wards* lasts.
+* Place *[stinking cloud](stinking-cloud "stinking cloud (lvl 3)")* in two locations. The vapors appear in the places you designate; They return within 10 min if dispersed by wind while *guards and wards* lasts.
 * Place a constant *[gust of wind](gust-of-wind "gust of wind (lvl 2)")* in one corridor or room.
 * Place a *[suggestion](suggestion "suggestion (lvl 2)")* in one location. You select an area of up to 5 feet square, and any creature that enters or passes through the area receives the suggestion mentally.
 

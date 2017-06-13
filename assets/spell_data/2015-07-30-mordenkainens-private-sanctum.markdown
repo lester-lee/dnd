@@ -8,7 +8,7 @@ tags: [wizard, level4, abjuration]
 
 **4th-level abjuration**
 
-**Casting Time**: 10 minutes
+**Casting Time**: 10 min
 
 **Range**: 120 feet
 
