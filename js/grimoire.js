@@ -83,17 +83,7 @@ $(document).ready(function() {
   });
 
   $('.navbar-search').on('keyup', function() {
-    var filter = $(this)[0].value.toUpperCase().split("|");
+    var filter = $(this)[0].value.toUpperCase().split(",");
     refreshList(filter);
-
-    // list = $('#spell-container');
-    // li = list[0].children;
-    // for (i = 0; i < li.length; i++) {
-    //   if (li[i].getAttribute("data-tags").toUpperCase().indexOf(filter) > -1) {
-    //     li[i].style.display = "";
-    //   } else {
-    //     li[i].style.display = "none";
-    //   }
-    // }
   });
 });
