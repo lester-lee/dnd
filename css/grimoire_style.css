@@ -3,45 +3,22 @@ body {
 }
 
 ::-webkit-scrollbar {
-    width: 2px;
+  width: 0px;
 }
 
 ::-webkit-scrollbar-track {
-    background: transparent;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
   background: #333;
 }
 
+
+/* Navbar (title, searchbar, toggle filter)*/
+
 nav, h1, h2, h3 {
   font-family: "Cinzel";
-}
-
-@media (max-width: 350px) {
-  .navbar-brand {
-    display: none;
-  }
-  .navbar-search {
-    margin-left: 30px;
-  }
-  .spell {
-    
-  }
-  .spell-level, .spell-info-box, .spell-desc {
-    /*display: none;*/
-  }
-}
-
-@media (min-width: 350px) {
-  .navbar-header {
-    float: none;
-  }
-  .spell-info-box {
-    display: -webkit-flex;
-    display: -ms-flex;
-    display: flex;
-  }
 }
 
 .navbar {
@@ -56,7 +33,7 @@ nav, h1, h2, h3 {
 .navbar-search {
   margin-top: 14px;
   min-width: 100px;
-  width: calc(100% - 175px);
+  width: calc(100vw - 210px);
   background: transparent;
   border: 0;
   outline: none;
@@ -86,6 +63,9 @@ ul {
   padding-left: 0px;
   margin: 0;
 }
+
+
+/*Spell filters*/
 
 .filters-show {
   display: -webkit-flex;
@@ -127,6 +107,9 @@ ul {
   color: #999;
 }
 
+
+/*Spells*/
+
 .spell-container {
   padding-top: 10px;
   height: calc(99vh - 50px);
@@ -135,50 +118,81 @@ ul {
 
 .spell {
   background: #888;
-  border: 5px solid #888;
-  border-radius: 20px;
+  border: 10px solid #888;
+  border-top-width: 5px;
+  /*border-radius: 20px;*/
   margin: 0;
   overflow: hidden;
   display: inline-block;
+  height: 35px;
 }
 
-.spell-info-box {
-  align-content: center;
-  -webkit-flex-flow: row;
-  -ms-flex-flow: row;
-  flex-flow: row;
+.show-spell {
+  height: 66vh;
 }
 
 .spell-name {
   font-size: 2.5ex;
   color: #fff;
+  margin-bottom: -4px;
+}
+
+.spell-level {
+  color: #ddd;
+  padding: 0;
+  margin: 0;
 }
 
 .spell-name, .spell-level {
   text-align: center;
   font-family: "Cinzel";
   font-weight: bold;
-  border-bottom: 1px solid #888;
 }
 
-.spell-info {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  text-align: center;
+.spell-info-box {
+  margin: 0 auto;
+  background: #fff;
+  color: #333;
+  border-bottom: 3px solid #888;
+  /*border-top-left-radius: 10px;
+  border-top-right-radius: 10px;*/
 }
 
 .spell-icon {
   float: left;
+  margin-top: 2px;
+  margin-left: 5px;
+  font-size: 1.2em;
+  margin-right: 20px;
 }
 
 .spell-desc {
-  height: 70%;
-  width: calc(100% - 16px);
+  height: calc(66vh - 138px);
   overflow: auto;
   margin: 0 auto;
-  margin-bottom: 2px;
+  padding-left: 5px;
   background: #fff;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+}
+
+@media (min-width: 600px) {
+  .spell-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .spell {
+    margin: 5px;
+    width: 250px;
+    max-width: 40vw;
+    height: 350px;
+    max-height: 66vh;
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar-header {
+    float: none;
+  }
 }

@@ -35,4 +35,10 @@ $(document).ready(function() {
     clearFilters();
   });
 
+  $('.spell-name').on('click', function () {
+    $(this).parent().toggleClass('show-spell');
+  });
+
+  $('#spells').load("assets/grimoire_spells.html");
+
 });
