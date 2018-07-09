@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="stylesheet" href="css/dndbattle.css">
+	<link href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'>
+	<title>DnD Battles</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tinysort/2.3.6/tinysort.js"></script>
+</head>
+
+<body>
+	<ul id="nav">
+		<li><a href="index.html">Home</a></li>
+		<li><a href="http://crobi.github.io/dnd5e-quickref/preview/quickref.html" target="_blank">Quick Ref</a></li>
+		<li><a href="http://thebombzen.github.io/grimoire/" target="_blank">Grimoire</a></li>
+	</ul>
+	<aside id="initiative">
+		<h3>Intiative:
+		<button id="sort-init" class="btn-init">Sort</button><button id="clear-init" class="btn-init">Clear All</button></h3>
+		<hr>
+		<h3 id="error-init" style="color:#b22222;">Input a number and a name!</h3>
+		<div id="init-head">
+			<textarea id="num-init" placeholder="#"></textarea>
+			<textarea id="name-init" placeholder="Name"></textarea>
+			<button id="add-init" class="btn-init">+</button>
+		</div>
+		<ol id="init-list">
+			<!-- example li
+			<li class="initBarry11 active" data-init="init11">11 | <span class="init-name">Barry</span></li>
+-->
+		</ol>
+	</aside>
+	<section id="main-battle">
+		<!-- example char
+		<div class="character active" id="nameBarry11">
+			<h3><span class="char-name">Barry</span>
+		<input type="button" class="remove-char" ></input>
+		<input type="button" class="dead-check"></input>
+		<input type="button" class="open-preset" ></input>
+			</h3>
+			<div class="char-stats">
+				<textarea class="ac" placeholder="AC"></textarea>
+				<textarea class="hp" placeholder="HP"></textarea>
+				<textarea class="mp" placeholder="MP"></textarea>
+			</div>
+			<h4 class="static-stat">STR     DEX    CON     INT    WIS    CHA</h4>
+			<div class="char-static-stats">
+				<textarea class="str" placeholder="STR"></textarea>
+				<textarea class="dex" placeholder="DEX"></textarea>
+				<textarea class="con" placeholder="CON"></textarea>
+				<textarea class="int" placeholder="INT"></textarea>
+				<textarea class="wis" placeholder="WIS"></textarea>
+				<textarea class="cha" placeholder="CHA"></textarea>
+			</div>
+			<h4>Battle Actions</h4>
+			<textarea class="actions"></textarea>
+			<h4>Notes</h4>
+			<textarea class="notes"></textarea>
+		</div>
+		-->
+	</section>
+	<div id="popup" class="overlay">
+		<div class="popup">
+			<h4>Presets <div class="close-preset">x</div></h4>
+		</div>
+	</div>
+	<script src="js/key.js"></script>
+	<script src="js/json/char_preset.json"></script>
+	<script src="js/dndbattle.js"></script>
+</body>
+
+</html>
