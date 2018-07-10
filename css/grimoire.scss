@@ -2,10 +2,13 @@
 ---
 /* --- #Variables ---*/
 
-$bg-color: #eee;
+$bg-color: #fff;
 $primary-color: #333;
 $secondary-color: #999;
 $masthead-color: #f8f8f8;
+
+$sans: 'Open Sans';
+$small-caps: 'Cinzel';
 
 %center-all {
     display: flex;
@@ -47,6 +50,7 @@ $masthead-color: #f8f8f8;
 /* --- #Base --- */
 body {
     overflow-x: hidden;
+    font-family: $sans;
 }
 
 ul {
@@ -57,6 +61,7 @@ ul {
 
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
+    font-family: $small-caps;
 }
 
 
@@ -127,16 +132,20 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 50px;
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
+    justify-content: center;
     padding: 20px;
 }
 
 .card {
-    width: 280px;
-    max-height: 400px;
+    box-sizing: border-box;
+    margin: 5px;
+    width: 270px;
+    max-width: 40vw;
+    height: 360px;
+    max-height: 66vh;
+    padding: 10px;
     display: flex;
     flex-flow: column;
-    margin: 10px;
 
     &Collapse {
         display: grid;
@@ -147,7 +156,25 @@ h1, h2, h3, h4, h5, h6 {
         text-align: center;
     }
 
+    &Info {
+        border-bottom: 2px solid $secondary-color;
+
+        &__label {
+            width: 24px;
+            text-align: center;
+        }
+    }
+
+    &Body {
+        background: $bg-color;
+    }
+
     &Desc {
         overflow: auto;
     }
+}
+
+@media only screen and (min-width:768px){
+    /* Turn off card toggle for non-mobile */
+
 }
