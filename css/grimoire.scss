@@ -88,6 +88,16 @@ p {
             border-bottom: 1px solid $secondary-color;
         }
     }
+    &Search {
+        min-width: 100px;
+        background: transparent;
+        border: 0;
+        outline: none;
+        border-bottom: 2px solid #999;
+        &:active, &:focus {
+            border-bottom-color: rgb(132, 175, 226);
+        }
+    }
     &Toggle {
         @extend %center-all;
         @extend %btn;
