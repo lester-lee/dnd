@@ -9,48 +9,55 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Grimoire</title>
     <link href="https://fonts.googleapis.com/css?family=Cinzel|Open+Sans" rel="stylesheet">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
-    crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+ crossorigin="anonymous">
+    <link rel="stylesheet" href="{{site.baseurl}}/css/normalize.css">
     <link rel="stylesheet" href="{{site.baseurl}}/css/grimoire.css">
 </head>
 
 <body>
 
-    <nav class="main-nav fixed-top full-width">
-        <div class="main-nav__row main-nav__row--top">
-            <a href="#" class="main-nav__brand">Grimoire</a>
-            <input class="main-nav__search" type="text" placeholder="Search">
-            <div class="btn main-nav__toggle" class="main-nav__search">
+    <nav class="masthead fixed-top">
+        <div class="mastheadRow mastheadRow--top">
+            <a class="mastheadBrand">
+                <h1>Grimoire</h1>
+            </a>
+            <input class="mastheadSearch" type="text" placeholder="Search" />
+            <label class="mastheadToggle btn btn--collapse" for="mastheadCollapse">
                 <i class="fas fa-chevron-down"></i>
-            </div>
+            </label>
         </div>
-        <ul class="spell-filters main-nav__row active">
-            <li class="spell-filter js-spell-filter" data-tag="level1">1</li>
-            <li class="spell-filter js-spell-filter" data-tag="level2">2</li>
-            <li class="spell-filter js-spell-filter" data-tag="level3">3</li>
-            <li class="spell-filter js-spell-filter" data-tag="level4">4</li>
-            <li class="spell-filter js-spell-filter" data-tag="level5">5</li>
-            <li class="spell-filter js-spell-filter" data-tag="level6">6</li>
-            <li class="spell-filter js-spell-filter" data-tag="level7">7</li>
-            <li class="spell-filter js-spell-filter" data-tag="level8">8</li>
-            <li class="spell-filter js-spell-filter" data-tag="level9">9</li>
-            <li class="spell-filter js-clear-filter">
-                <i class="fas fa-times"></i>
-            </li>
-        </ul>
-        <ul class="spell-filters main-nav__row active">
-            <li class="spell-filter js-spell-filter" data-tag="bard">Bard</li>
-            <li class="spell-filter js-spell-filter" data-tag="cleric">Cleric</li>
-            <li class="spell-filter js-spell-filter" data-tag="druid">Druid</li>
-            <li class="spell-filter js-spell-filter" data-tag="paladin">Paladin</li>
-            <li class="spell-filter js-spell-filter" data-tag="ranger">Ranger</li>
-            <li class="spell-filter js-spell-filter" data-tag="sorcerer">Sorcerer</li>
-            <li class="spell-filter js-spell-filter" data-tag="warlock">Warlock</li>
-            <li class="spell-filter js-spell-filter" data-tag="wizard">Wizard</li>
-            <li class="spell-filter js-clear-filter">
-                <i class="fas fa-times"></i>
-            </li>
-        </ul>
+        <input type="checkbox" id="mastheadCollapse" class="collapse__toggle" checked/>
+        <div class="collapse">
+            <ul class="mastheadRow filter-list">
+                <li class="filter js-filter" data-tag="cantrip">C</li>
+                <li class="filter js-filter" data-tag="level1">1</li>
+                <li class="filter js-filter" data-tag="level2">2</li>
+                <li class="filter js-filter" data-tag="level3">3</li>
+                <li class="filter js-filter" data-tag="level4">4</li>
+                <li class="filter js-filter" data-tag="level5">5</li>
+                <li class="filter js-filter" data-tag="level6">6</li>
+                <li class="filter js-filter" data-tag="level7">7</li>
+                <li class="filter js-filter" data-tag="level8">8</li>
+                <li class="filter js-filter" data-tag="level9">9</li>
+                <li class="filter filter--clear js-clear-filter">
+                    <i class="fas fa-times"></i>
+                </li>
+            </ul>
+            <ul class="mastheadRow filter-list">
+                <li class="filter js-filter" data-tag="bard">Bard</li>
+                <li class="filter js-filter" data-tag="cleric">Cleric</li>
+                <li class="filter js-filter" data-tag="druid">Druid</li>
+                <li class="filter js-filter" data-tag="paladin">Paladin</li>
+                <li class="filter js-filter" data-tag="ranger">Ranger</li>
+                <li class="filter js-filter" data-tag="sorcerer">Sorcerer</li>
+                <li class="filter js-filter" data-tag="warlock">Warlock</li>
+                <li class="filter js-filter" data-tag="wizard">Wizard</li>
+                <li class="filter filter--clear js-clear-filter">
+                    <i class="fas fa-times"></i>
+                </li>
+            </ul>
+        </div>
     </nav>
 
     <!--
