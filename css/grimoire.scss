@@ -51,6 +51,7 @@ $small-caps: 'Cinzel';
 body {
     overflow-x: hidden;
     font-family: $sans;
+    font-size: 14px;
 }
 
 ul {
@@ -64,6 +65,9 @@ h1, h2, h3, h4, h5, h6 {
     font-family: $small-caps;
 }
 
+p {
+    margin: 0 0 10px;
+}
 
 /* --- #Nav --- */
 
@@ -146,6 +150,8 @@ h1, h2, h3, h4, h5, h6 {
     padding: 10px;
     display: flex;
     flex-flow: column;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
 
     &Collapse {
         display: grid;
@@ -154,7 +160,14 @@ h1, h2, h3, h4, h5, h6 {
 
     &Text {
         text-align: center;
+        color: $bg-color;
+        &--title {
+            min-height: 2rem;
+            font-size: 1.5rem;
+        }
     }
+
+    &
 
     &Info {
         border-bottom: 2px solid $secondary-color;
@@ -170,6 +183,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     &Desc {
+        height: 210px;
         overflow: auto;
     }
 }
