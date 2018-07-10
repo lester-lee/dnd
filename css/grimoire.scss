@@ -5,6 +5,7 @@
 $bg-color: #eee;
 $primary-color: #333;
 $secondary-color: #999;
+$masthead-color: #f8f8f8;
 
 %center-all {
     display: flex;
@@ -25,7 +26,7 @@ $secondary-color: #999;
 
 @mixin spell-style($color) {
     background: $color;
-    border: 10px solid $color;
+    padding: 10px;
 }
 
 /* --- #Modules --- */
@@ -74,6 +75,8 @@ h1, h2, h3, h4, h5, h6 {
 
         &--top {
             grid-template-columns: 1fr 10fr .5fr;
+            background: $masthead-color;
+            border-bottom: 1px solid $secondary-color;
         }
     }
     &Toggle {
@@ -119,3 +122,32 @@ h1, h2, h3, h4, h5, h6 {
 .level8 {@include spell-style(#a48e6d);}
 
 .level9 {@include spell-style(#a27269);}
+
+.card-list {
+    margin-top: 50px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.card {
+    width: 280px;
+    max-height: 400px;
+    display: flex;
+    flex-flow: column;
+    margin: 10px;
+
+    &Collapse {
+        display: grid;
+        grid-template-rows: 1.2rem 5rem minmax(max-content,200px);
+    }
+
+    &Text {
+        text-align: center;
+    }
+
+    &Desc {
+        overflow: auto;
+    }
+}
