@@ -17,76 +17,76 @@
 
 <body>
 
-    <nav class="masthead fixed-top">
-        <div class="mastheadRow mastheadRow--top">
-            <a class="mastheadBrand">
+    <nav class="Masthead fixed-top">
+        <div class="Masthead-row Masthead-row--top">
+            <a class="Masthead-brand">
                 <h1>Grimoire</h1>
             </a>
-            <input class="mastheadSearch" type="text" placeholder="Search" />
-            <label class="mastheadToggle" for="mastheadCollapse">
+            <input class="Masthead-search" type="text" placeholder="Search" />
+            <label class="Masthead-toggle" for="Masthead-collapse">
                 <i class="fas fa-chevron-down"></i>
             </label>
         </div>
-        <input type="checkbox" id="mastheadCollapse" class="collapse__toggle" checked/>
-        <div class="collapse">
-            <ul class="mastheadRow filter-list">
-                <li class="filter js-filter" data-tag="cantrip">C</li>
-                <li class="filter js-filter" data-tag="level1">1</li>
-                <li class="filter js-filter" data-tag="level2">2</li>
-                <li class="filter js-filter" data-tag="level3">3</li>
-                <li class="filter js-filter" data-tag="level4">4</li>
-                <li class="filter js-filter" data-tag="level5">5</li>
-                <li class="filter js-filter" data-tag="level6">6</li>
-                <li class="filter js-filter" data-tag="level7">7</li>
-                <li class="filter js-filter" data-tag="level8">8</li>
-                <li class="filter js-filter" data-tag="level9">9</li>
-                <li class="filter filter--clear js-clear-filter">
+        <input type="checkbox" id="Masthead-collapse" class="Collapse-toggle" checked/>
+        <div class="Collapse">
+            <ul class="Masthead-row FilterList">
+                <li class="Filter js-filter" data-tag="cantrip">C</li>
+                <li class="Filter js-filter" data-tag="level1">1</li>
+                <li class="Filter js-filter" data-tag="level2">2</li>
+                <li class="Filter js-filter" data-tag="level3">3</li>
+                <li class="Filter js-filter" data-tag="level4">4</li>
+                <li class="Filter js-filter" data-tag="level5">5</li>
+                <li class="Filter js-filter" data-tag="level6">6</li>
+                <li class="Filter js-filter" data-tag="level7">7</li>
+                <li class="Filter js-filter" data-tag="level8">8</li>
+                <li class="Filter js-filter" data-tag="level9">9</li>
+                <li class="Filter Filter--clear js-clear-filter">
                     <i class="fas fa-times"></i>
                 </li>
             </ul>
-            <ul class="mastheadRow filter-list">
-                <li class="filter js-filter" data-tag="bard">Bard</li>
-                <li class="filter js-filter" data-tag="cleric">Cleric</li>
-                <li class="filter js-filter" data-tag="druid">Druid</li>
-                <li class="filter js-filter" data-tag="paladin">Paladin</li>
-                <li class="filter js-filter" data-tag="ranger">Ranger</li>
-                <li class="filter js-filter" data-tag="sorcerer">Sorcerer</li>
-                <li class="filter js-filter" data-tag="warlock">Warlock</li>
-                <li class="filter js-filter" data-tag="wizard">Wizard</li>
-                <li class="filter filter--clear js-clear-filter">
+            <ul class="Masthead-row FilterList">
+                <li class="Filter js-filter" data-tag="bard">Bard</li>
+                <li class="Filter js-filter" data-tag="cleric">Cleric</li>
+                <li class="Filter js-filter" data-tag="druid">Druid</li>
+                <li class="Filter js-filter" data-tag="paladin">Paladin</li>
+                <li class="Filter js-filter" data-tag="ranger">Ranger</li>
+                <li class="Filter js-filter" data-tag="sorcerer">Sorcerer</li>
+                <li class="Filter js-filter" data-tag="warlock">Warlock</li>
+                <li class="Filter js-filter" data-tag="wizard">Wizard</li>
+                <li class="Filter Filter--clear js-clear-filter">
                     <i class="fas fa-times"></i>
                 </li>
             </ul>
         </div>
     </nav>
 
-    <ul class="card-list">
+    <ul class="CardList">
         {% for spell in site.posts %} {% assign tags = spell.tags %}
-        <li class="card level7">
-            <label class="cardToggle" for="{{spell.title | handleize}}">
-                <h3 class="cardText cardText--title">{{spell.title}}</h3>
+        <li class="Card level7">
+            <label class="Card-toggle" for="{{spell.title | handleize}}">
+                <h3 class="Card-text Card-text--title">{{spell.title}}</h3>
             </label>
-            <input class="collapse__toggle" type="checkbox" id="{{spell.title | handleize}}" />
-            <div class="collapse cardCollapse">
-                <h4 class="cardText cardText--subtitle">{{spell.subtitle}}</h4>
-                <ul class="cardBody cardInfo">
-                    <li class="cardInfo__item">
-                        <i class="cardInfo__label far fa-clock"></i> {{spell.cast}}
+            <input class="Collapse-toggle" type="checkbox" id="{{spell.title | handleize}}" />
+            <div class="Collapse Card-collapse">
+                <h4 class="Card-text Card-text--subtitle">{{spell.subtitle}}</h4>
+                <ul class="Card-body Card-list">
+                    <li class="Card-listItem">
+                        <i class="Card-icon far fa-clock"></i> {{spell.cast}}
                     </li>
-                    <li class="cardInfo__item">
-                        <i class="cardInfo__label fas fa-hourglass-half"></i>
+                    <li class="Card-listItem">
+                        <i class="Card-icon fas fa-hourglass-half"></i>
                         {{spell.duration}}
                     </li>
-                    <li class="cardInfo__item">
-                        <i class="cardInfo__label fas fa-asterisk"></i>
+                    <li class="Card-listItem">
+                        <i class="Card-icon fas fa-asterisk"></i>
                         {{spell.components}}
                     </li>
-                    <li class="cardInfo__item">
-                        <i class="cardInfo__label fas fa-bullseye"></i>
+                    <li class="Card-listItem">
+                        <i class="Card-icon fas fa-bullseye"></i>
                         {{spell.range}}
                     </li>
                 </ul>
-                <div class="cardBody cardDesc">
+                <div class="Card-body Card-desc">
                     {{ spell.content }}
                 </div>
             </div>
