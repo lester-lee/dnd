@@ -2,19 +2,21 @@ var filters = [];
 
 function refreshList(text) {
   var spells, i, tags;
-  tfilters = text || filters;
-  var fi, flen = tfilters.length;
+  var show;
+  var tfilters = text || filters;
+
   spells = document.querySelectorAll(".Card");
   for (i = 0; i < spells.length; i++) {
+    show = false;
     spell = spells[i];
     tags = spell.getAttribute("data-tags").toUpperCase();
-    for (fi = 0; fi < flen; fi++) {
-      if (tags.indexOf(tfilters[fi]) <= 0) {
-        spell.classList.add('is-hidden');
-      }else {
-        spell.classList.remove('is-hidden');
-      }
+    for (var fi = 0; fi < tfilters.length; fi++) {
+      show = show || tags.includes(tfilters[fi]);
     }
+
+    if (show || filters.length == 0) {
+      spell.classList.remove('is-hidden');
+    } else { spell.classList.add('is-hidden'); }
   }
 }
 
