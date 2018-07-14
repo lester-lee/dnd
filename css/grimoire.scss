@@ -154,14 +154,15 @@ p {
 .CardList {
   display: flex;
   flex-flow: row wrap;
+  justify-content: center;
   padding: 1.5rem;
 }
 
 .Card {
   box-sizing: border-box;
 
-  width: 16em;
-  max-height: 25em;
+  width: 20em;
+  max-height: 28em;
   margin: .5em;
   padding: .5em;
 
