@@ -55,7 +55,8 @@
   </div>
   <ul class="CardList">
     {% for spell in site.spells %}
-    <li class="Card {{ spell.level }}">
+    <li class="Card {{ spell.level }}"
+        data-tags="{{ spell.tags | join: ',' }}">
       <label class="Card-toggle" for="{{spell.title | handleize}}">
         <h2 class="Card-title">{{spell.title}}</h2>
       </label>
@@ -89,6 +90,7 @@
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
+  <script src="{{site.baseurl}}/js/grimoire.js"></script>
 </body>
 
 </html>

@@ -33,6 +33,7 @@ $level-colors: (
   border-radius: 15px;
   &:hover {
     border: 1px solid $bg-color;
+    cursor: pointer;
   }
   &:active,
   &.is-active {
@@ -193,6 +194,9 @@ p {
     flex-grow: 1;
     overflow: auto;
     padding: .2em;
+  }
+  &.is-hidden {
+    display: none;
   }
 }
 
