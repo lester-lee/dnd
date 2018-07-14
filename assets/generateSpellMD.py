@@ -42,15 +42,13 @@ for filepath in os.listdir("spell_data"):
             "dur": spell_dur,
             "desc": spell_desc
         }
-        spell_md = '''---\nlayout: post\ntitle: {name}\nsubtitle: {level}\ntags: [{tags}]\ncast: {cast}\nduration: {dur}\ncomponents: {comp}\nrange: {range}\n---\n{desc}'''.format(**spell)
+        spell_md = '''---\ntitle: {name}\nsubtitle: {level}\nlevel: {lvl}\ntags: [{tags}]\ncast: {cast}\nduration: {dur}\ncomponents: {comp}\nrange: {range}\n---\n{desc}'''.format(**spell)
 
         spell["md"] = spell_md
         spell_list.append(spell)
 
 # sort list of spells by level, then by name
 spell_list = sorted(spell_list, key=lambda k: (k['dlvl'], k['name']))
-year = 0
 for sp in spell_list[::-1]:
-    with open("../_posts/{}-08-08-{}.md".format(str(year).zfill(4), sp["handle"]), 'w+', encoding='UTF-8') as f:
+    with open("../_spells/{}.md".format(sp["handle"]), 'w+', encoding='UTF-8') as f:
         f.write(sp["md"])
-        year += 1

@@ -1,0 +1,7 @@
+name: Grimoire
+permalink: pretty
+sass:
+  style: expanded
+
+collections:
+- spells
