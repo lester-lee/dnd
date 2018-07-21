@@ -11,7 +11,6 @@ var hiddenSpells = [];
 var shownSpells = [];
 
 function refreshFilters() {
-  console.log(hiddenSpells.length, shownSpells.length);
   for (var i = 0; i < hiddenSpells.length; i++) {
     hiddenSpells[i].classList.add('is-hidden');
   }
