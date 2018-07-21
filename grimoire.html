@@ -28,38 +28,34 @@
       </label>
     </div>
 
+    <input type="checkbox" id="Masthead-collapse" class="Collapse-toggle" checked/>
+
+    <div class="Collapse Collapse--filter">
+      <ul class="Masthead-row FilterList">
+        {% for lvl in site.data.levels %}
+        <li class="Filter js-filter" data-filter-type="level" data-tag="{{ lvl.tag }}">
+          {{ lvl.text }}
+        </li>
+        {% endfor %}
+        <li class="Filter Filter--clear js-clear-filter">
+          <i class="fas fa-times"></i>
+        </li>
+      </ul>
+
+      <ul class="Masthead-row FilterList">
+        {% for class in site.data.classes %}
+        <li class="Filter js-filter" data-filter-type="class" data-tag="{{ class.name | downcase}}">
+          {{ class.name }}
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
   </nav>
-
-  <input type="checkbox" id="Masthead-collapse" class="Collapse-toggle" checked/>
-
-  <div class="Collapse Collapse--filter fixed-top">
-    <ul class="Masthead-row FilterList">
-      {% for lvl in site.data.levels %}
-      <li class="Filter js-filter" data-filter-type="level" data-tag="{{ lvl.tag }}">
-        {{ lvl.text }}
-      </li>
-      {% endfor %}
-      <li class="Filter Filter--clear js-clear-filter">
-        <i class="fas fa-times"></i>
-      </li>
-    </ul>
-
-    <ul class="Masthead-row FilterList">
-      {% for class in site.data.classes %}
-      <li class="Filter js-filter" data-filter-type="class" data-tag="{{ class.name | downcase}}">
-        {{ class.name }}
-      </li>
-      {% endfor %}
-    </ul>
-  </div>
-
 
   <ul class="CardList">
 
     {% for spell in site.spells %}
-    <li class="Card {{ spell.level }}"
-        data-tags="{{ spell.tags | join: ',' }}"
-        data-visible="initial" >
+    <li class="Card {{ spell.level }}" data-tags="{{ spell.tags | join: ',' }}" data-visible="initial">
 
       <label class="Card-toggle" for="{{spell.title | handleize}}">
         <h2 class="Card-title">{{spell.title}}</h2>

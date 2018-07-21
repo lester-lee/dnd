@@ -139,10 +139,6 @@ p {
   }
 }
 
-.Collapse--filter {
-  margin-top: .7rem;
-}
-
 /* --- #Spell-Cards --- */
 
 @each $level, $color in $level-colors {
