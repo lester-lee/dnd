@@ -30,8 +30,9 @@ $level-colors: (
 }
 
 %btn {
-  border-radius: 15px;
-  &:hover {
+  border-radius: .8em;
+  &:hover,
+  &.is-active {
     border: 1px solid $bg-color;
     cursor: pointer;
   }
@@ -58,6 +59,13 @@ $level-colors: (
 }
 
 /* --- #Base --- */
+html {
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit;
+}
 
 body {
   overflow-x: hidden;
@@ -93,13 +101,12 @@ p {
   display: flex;
   flex-flow: column;
   &-row {
-    height: 1.8rem;
+    min-height: 1.8rem;
     padding: .5em 2em;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-gap: 1em;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
     &--top {
-      grid-template-columns: 1fr 10fr .5fr;
       background: $Masthead-color;
       border-bottom: 1px solid $secondary-color;
     }
@@ -110,6 +117,8 @@ p {
     border: 0;
     outline: none;
     border-bottom: 2px solid $secondary-color;
+    flex-grow: 9;
+    margin: 0 1em;
     &:active,
     &:focus {
       border-bottom-color: rgb(132, 175, 226);
@@ -118,6 +127,7 @@ p {
   &-toggle {
     @extend %center-all;
     @extend %btn;
+    flex-grow: 1;
     &:active,
     &.is-active {
       background: $secondary-color;
@@ -134,9 +144,9 @@ p {
 .Filter {
   @extend %center-all;
   @extend %btn;
-  &--clear {
-    grid-column-end: -1;
-  }
+  width: 4em;
+  height: 2.5em;
+  margin: .2em;
 }
 
 /* --- #Spell-Cards --- */
@@ -200,5 +210,8 @@ p {
   /* Turn off card toggle for non-mobile */
   .Card-collapse.Card-collapse.Card-collapse {
     display: flex;
+  }
+  .Filter {
+    width: 8%;
   }
 }
