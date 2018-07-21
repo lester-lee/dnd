@@ -31,10 +31,11 @@
   </nav>
 
   <input type="checkbox" id="Masthead-collapse" class="Collapse-toggle" checked/>
-  <div class="Collapse Collapse--filter">
+
+  <div class="Collapse Collapse--filter fixed-top">
     <ul class="Masthead-row FilterList">
       {% for lvl in site.data.levels %}
-      <li class="Filter js-filter" data-tag="{{ lvl.tag }}">
+      <li class="Filter js-filter" data-filter-type="level" data-tag="{{ lvl.tag }}">
         {{ lvl.text }}
       </li>
       {% endfor %}
@@ -42,23 +43,30 @@
         <i class="fas fa-times"></i>
       </li>
     </ul>
+
     <ul class="Masthead-row FilterList">
       {% for class in site.data.classes %}
-      <li class="Filter js-filter" data-tag="{{ class.name | downcase}}">
+      <li class="Filter js-filter" data-filter-type="class" data-tag="{{ class.name | downcase}}">
         {{ class.name }}
       </li>
       {% endfor %}
     </ul>
   </div>
+
+
   <ul class="CardList">
+
     {% for spell in site.spells %}
     <li class="Card {{ spell.level }}"
-        data-tags="{{ spell.tags | join: ',' }}">
+        data-tags="{{ spell.tags | join: ',' }}"
+        data-visible="initial" >
+
       <label class="Card-toggle" for="{{spell.title | handleize}}">
         <h2 class="Card-title">{{spell.title}}</h2>
       </label>
       <input class="Collapse-toggle" type="checkbox" id="{{spell.title | handleize}}" checked />
       <div class="Collapse Card-collapse">
+
         <h3 class="Card-title Card-title--sub">{{spell.subtitle}}</h3>
         <ul class="Card-body Card-list">
           <li class="Card-listItem">
@@ -77,12 +85,15 @@
             {{spell.range}}
           </li>
         </ul>
+
         <div class="Card-body Card-desc">
           {{ spell.content }}
         </div>
+
       </div>
     </li>
     {% endfor %}
+
   </ul>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
