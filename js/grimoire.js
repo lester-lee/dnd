@@ -1,78 +1,101 @@
-var filters = [];
+/* Lester Lee 2018 */
 
-function refreshList(text) {
-  var li, i, tags, show;
-  tfilters = text || filters;
-  var fi, flen = tfilters.length;
-  // console.log(tfilters);
-  li = $('#spell-container').children();
-  for (i = 0; i < li.length; i++) {
-    show = true;
-    tags = li[i].getAttribute("data-tags").toUpperCase();
-    for (fi = 0; fi < flen; fi++) {
-      // console.log(tfilters[fi], tags);
-      if (tags.indexOf(tfilters[fi]) < 0) {
-        show = false;
-        break;
-      }
-    }
-    li[i].style.display = show ? "" : "none";
-  }
+var filters = {
+  'class': [],
+  'level': [],
+  'text': []
 }
 
-function toggleFilter(text) {
+var allSpells;
+var hiddenSpells = [];
+var shownSpells = [];
+
+function refreshFilters() {
+  for (var i = 0; i < hiddenSpells.length; i++) {
+    hiddenSpells[i].classList.add('is-hidden');
+  }
+  for (var j = 0; j < shownSpells.length; j++) {
+    shownSpells[j].classList.remove('is-hidden');
+  }
+  hiddenSpells = [], shownSpells = [];
+}
+
+function checkFilter(show, ftype, tags) {
+  if (show) return show;
+  for (var i = 0; i < filters[ftype].length; i++) {
+    show = show || tags.includes(filters[ftype][i]);
+  }
+  return show;
+}
+
+function updateFilters() {
+  var showClass, showLevel, showText;
+  var spell, tags, isVisible;
+
+  for (var i = 0; i < allSpells.length; i++) {
+    spell = allSpells[i];
+    tags = spell.getAttribute('data-tags').toUpperCase();
+    isVisible = spell.getAttribute('data-visible');
+
+    showClass = checkFilter(!filters['class'].length, 'class', tags);
+    showLevel = checkFilter(!filters['level'].length, 'level', tags);
+    showText = checkFilter(!filters['text'].length, 'text', tags);
+
+    if (showClass && showLevel && showText) {
+      if (isVisible === 'false'){
+        spell.setAttribute('data-visible', 'true');
+        shownSpells.push(spell);
+      }
+    } else {
+      if (isVisible !== 'false')
+        spell.setAttribute('data-visible', 'false');
+        hiddenSpells.push(spell);
+    }
+  }
+
+  refreshFilters();
+}
+
+function toggleFilter(text, ftype) {
   var filter, list, li, i, tags, idx;
   filter = text.toUpperCase();
-  idx = filters.indexOf(filter);
+  idx = filters[ftype].indexOf(filter);
   if (idx > -1) {
-    filters.splice(idx, 1);
+    filters[ftype].splice(idx, 1);
   } else {
-    filters.push(filter)
+    filters[ftype].push(filter)
   }
-  refreshList();
+  updateFilters();
 }
 
 function clearFilters() {
-  filters = [];
-  refreshList();
+  filters = {
+    'class': [],
+    'level': [],
+    'text': []
+  };
+  updateFilters();
 }
 
-$(document).ready(function() {
+$(document).ready(function () {
 
-  $('.toggle-filters').on('click', function() {
-    btn = $(this);
-    if (btn.attr('data-toggled') == 0) {
-      btn.attr('data-toggled', 1);
-      $('.spell-filters').removeClass('filters-hide');
-      $('.spell-filters').addClass('filters-show');
-      btn.removeClass('glyphicon-chevron-down');
-      btn.addClass('glyphicon-chevron-up');
-    } else {
-      btn.attr('data-toggled', 0);
-      $('.spell-filters').removeClass('filters-show');
-      $('.spell-filters').addClass('filters-hide');
-      btn.addClass('glyphicon-chevron-down');
-      btn.removeClass('glyphicon-chevron-up');
-    }
+  $('.Masthead-toggle').on('click', function () {
+    $(this).toggleClass('is-active');
   });
 
-  $('.spell-filter').on('click', function() {
-    f = $(this);
-    f.toggleClass('active-filter');
-    toggleFilter(f.attr('data-tags'));
-  });
-
-  $('.clear-filters').on('click', function() {
-    $(this).siblings().removeClass('active-filter');
+  $('.js-clear-filter').on('click', function () {
+    $('.js-filter').removeClass('is-active');
     clearFilters();
   });
 
-  $('.spell-name').on('click', function() {
-    $(this).parent().toggleClass('show-spell');
+  $('.js-filter').on('click', function () {
+    f = $(this);
+    f.toggleClass('is-active');
+    toggleFilter(f.attr('data-tag'), f.attr('data-filter-type'));
   });
 
-  $('div').on('mousewheel DOMMouseScroll', function(e) {
-
+  $('.Card-desc').on('mousewheel DOMMouseScroll', function (e) {
+    // prevent scrolling card from scrolling body
     var e0 = e.originalEvent;
     var delta = e0.wheelDelta || -e0.detail;
 
@@ -80,8 +103,11 @@ $(document).ready(function() {
     e.preventDefault();
   });
 
-  $('.navbar-search').on('keyup', function() {
-    var filter = $(this)[0].value.toUpperCase().split(",");
-    refreshList(filter);
+  $('.Masthead-search').on('keyup', function () {
+    filters['text'] = $(this)[0].value.toUpperCase().split(",");
+    updateFilters();
   });
+
+  allSpells = document.querySelectorAll(".Card");
+
 });

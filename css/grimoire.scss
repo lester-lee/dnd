@@ -1,0 +1,217 @@
+---
+---
+/* --- #Variables ---*/
+
+$bg-color: #fff;
+$primary-color: #333;
+$secondary-color: #999;
+$Masthead-color: #f8f8f8;
+$sans: 'Open Sans';
+$small-caps: 'Cinzel';
+
+$level-colors: (
+  'cantrip': #6c7a89,
+  'level1': #a46d96,
+  'level2': #9371a7,
+  'level3': #7168a1,
+  'level4': #6679a0,
+  'level5': #6692a0,
+  'level6': #6aa270,
+  'level7': #8da168,
+  'level8': #a48e6d,
+  'level9': #a27269,
+);
+
+
+%center-all {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+%btn {
+  border-radius: .8em;
+  &:hover,
+  &.is-active {
+    border: 1px solid $bg-color;
+    cursor: pointer;
+  }
+  &:active,
+  &.is-active {
+    background: $bg-color;
+    color: $primary-color;
+  }
+}
+
+/* --- #Modules --- */
+
+.fixed-top {
+  position: fixed;
+  top: 0;
+}
+
+.Collapse-toggle {
+  display: none;
+
+  &:checked + .Collapse {
+    display: none;
+  }
+}
+
+/* --- #Base --- */
+html {
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: $sans;
+  font-size: 14px;
+  padding-top: 2rem;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: $small-caps;
+}
+
+p {
+  margin: 0 0 .6em;
+}
+
+/* --- #Nav --- */
+
+.Masthead {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  &-row {
+    min-height: 1.8rem;
+    padding: .5em 2em;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    &--top {
+      background: $Masthead-color;
+      border-bottom: 1px solid $secondary-color;
+    }
+  }
+  &-search {
+    min-width: 100px;
+    background: transparent;
+    border: 0;
+    outline: none;
+    border-bottom: 2px solid $secondary-color;
+    flex-grow: 9;
+    margin: 0 1em;
+    &:active,
+    &:focus {
+      border-bottom-color: rgb(132, 175, 226);
+    }
+  }
+  &-toggle {
+    @extend %center-all;
+    @extend %btn;
+    flex-grow: 1;
+    &:active,
+    &.is-active {
+      background: $secondary-color;
+      color: $bg-color;
+    }
+  }
+}
+
+.FilterList {
+  background: $secondary-color;
+  color: $bg-color;
+}
+
+.Filter {
+  @extend %center-all;
+  @extend %btn;
+  width: 4em;
+  height: 2.5em;
+  margin: .2em;
+}
+
+/* --- #Spell-Cards --- */
+
+@each $level, $color in $level-colors {
+  .#{$level} {
+    background: $color;
+    padding: .5em;
+  }
+}
+
+.CardList {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.Card {
+  box-sizing: border-box;
+
+  width: 20em;
+  max-height: 28em;
+  margin: .5em;
+  padding: .5em;
+
+  display: flex;
+  flex-flow: column;
+
+  &-title {
+    text-align: center;
+    color: $bg-color;
+  }
+  &-collapse {
+    flex-grow: 1;
+    display: flex;
+    flex-flow: column;
+  }
+  &-list {
+    padding: .1em;
+  }
+  &-icon {
+    width: 1.4em;
+    text-align: center;
+  }
+  &-body {
+    margin-bottom: .2em;
+    background: $bg-color;
+  }
+  &-desc {
+    flex-grow: 1;
+    overflow: auto;
+    padding: .2em;
+  }
+  &.is-hidden {
+    display: none;
+  }
+}
+
+@media only screen and (min-width:768px) {
+  /* Turn off card toggle for non-mobile */
+  .Card-collapse.Card-collapse.Card-collapse {
+    display: flex;
+  }
+  .Filter {
+    width: 8%;
+  }
+}
