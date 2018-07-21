@@ -105,7 +105,7 @@ $(document).ready(function () {
   });
 
   $('.Masthead-search').on('keyup', function () {
-    filter['text'] = $(this)[0].value.toUpperCase().split(",");
+    filters['text'] = $(this)[0].value.toUpperCase().split(",");
     updateFilters();
   });
 
